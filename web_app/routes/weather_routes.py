@@ -16,8 +16,9 @@ def weather_forecast_api():
     country_code = url_params.get("country_code") or "US"
     zip_code = url_params.get("zip_code") or "20057"
 
-    results = get_hourly_forecasts(
-        country_code=country_code, zip_code=zip_code)
+    #LOOK HERE
+    #importing this function from the app directory
+    results = get_hourly_forecasts(country_code=country_code, zip_code=zip_code)
     if results:
         return jsonify(results)
     else:
